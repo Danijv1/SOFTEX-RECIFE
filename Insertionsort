@@ -1,0 +1,31 @@
+import random
+lista = random.sample (range(50), 30)
+print ("\n 30 números aleatórios até 50:")
+print (lista)
+
+
+# colocando a lista em ordem crescente
+def insertion_sort (lista):
+    n = len(lista)
+    for i in range(1, n):
+        chave = lista[i]
+        j = i-1
+        while j>= 0 and lista[j]>chave:
+            lista[j+1] = lista[j]
+            j = j-1
+        lista[j+1]=chave
+        
+
+# definindo os números ímpares da lista
+def numeros_impares (lista):
+    n = len(lista)
+    for i in range (0, n):
+        if (lista[i]%2==1):
+            print (lista[i])
+    i = i + 1
+
+
+insertion_sort(lista)
+
+print ("\n Os números ímpares gerados da lista anterior em ordem crescente são:")
+numeros_impares (lista)
