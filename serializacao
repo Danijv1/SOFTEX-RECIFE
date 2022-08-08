@@ -1,0 +1,25 @@
+public class Serializer {
+    public static void main(String... args) throws Exception {
+        espumanteEspumante = new Vinho();
+        espumante.setNome("Moscatel");
+        espumante.setTipo(“Rose”);
+    
+        FileOutputStream fOut = new FileOutputStream("C:\\espumante.ser");
+        ObjectOutputStream oOut = new ObjectOutputStream(fOut);
+        oOut.writeObject(espumante);
+        oOut.close();
+        System.out.println("Objeto serializado.");
+    }
+}
+
+
+public class Deserializer {
+    public static void main(String... args) throws Exception {
+        FileInputStream fOut= new FileInputStream("C:\\espumante.ser");
+        ObjectInputStream oOut= new ObjectInputStream(fOut);
+        espumanteEspumante = (espumante) oOut.readObject();
+        oOut.close();
+    
+        System.out.println("Objeto deserializado.");
+    }
+}
