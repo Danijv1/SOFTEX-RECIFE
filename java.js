@@ -1,3 +1,6 @@
+/* Escolhi o editor de código-fonte VSCODE porque entendo que facilita a aprendizagem quando em um único local posso usar de várias linguagens
+para conhecer e treinar*/
+
 var readline = require('readline');
 var resp = "";
 
