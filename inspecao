@@ -1,0 +1,9 @@
+//site softex
+
+//botão entrar, para fazer login no site
+<a _ngcontent-rdl-c272="" routerlink="/auth/recover" class="color900 ng-star-inserted" href="/auth/recover">Esqueceu a senha?</a>
+
+//site Meliuz
+
+//botão para se cadastrar no site - "Ainda não tem Meliuz?"
+<a id="link-login-page-signup-redirect" href="/registrar" class="g7m61z-9 fdAqUV">Cadastre-se</a>
