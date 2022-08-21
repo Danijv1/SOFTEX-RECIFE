@@ -1,0 +1,24 @@
+// Primeiro sistema de notas para ver se está aprovado
+
+import readlineSync from "readline-sync";
+
+const rl = readlineSync;
+
+var nota1 = rl.questionFloat("Nota 1: ");
+var nota2 = rl.questionFloat("Nota 2: ");
+var nota3 = rl.questionFloat("Nota 3: ");
+var media = (nota1 + nota2 + nota3)/3
+
+media >=7 ? console.log("Você está aprovado com média " + media) : console.log("Você está reprovado")
+
+// Segundo sistema de notas para dizer quando precisa na 3a nota para ser aprovado
+import readlineSync from "readline-sync";
+
+const rl = readlineSync;
+
+var nota1 = rl.questionFloat("Nota 1: ");
+var nota2 = rl.questionFloat("Nota 2: ");
+var nota3 = 21 - nota1 - nota2
+
+    
+console.log("Para você ser aprovado, precisa tirar pelo menos " + nota3 + " na sua 3a nota");                    
