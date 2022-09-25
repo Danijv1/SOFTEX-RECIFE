@@ -1,0 +1,40 @@
+class Pc {
+    constructor(ram, hd, cpu, type) {
+      this.ram = ram
+      this.hd = hd
+      this.cpu = cpu
+      this.type = type
+    }
+  
+    toString() {
+      console.log(this.ram, this.hd, this.cpu, this.type)
+    }
+  }
+  
+  class Server {
+    constructor(ram, hd, cpu, type) {
+      this.ram = ram
+      this.hd = hd
+      this.cpu = cpu
+      this.type = type
+    }
+    toString() {
+      console.log(this.ram, this.hd, this.cpu, this.type)
+    }
+  }
+  
+  
+  let computer = ''
+  function fabrica(computerType) {
+    if (computerType === 'pc') {
+      computer = new Pc('4gb', '500gb', '2.1GHz', 'pc')
+    } else {
+      computer = new Server('8gb', '500gb', '3.4GHz', 'server')
+    }
+  }
+  
+
+  fabrica('server')
+  computer.toString()
+  fabrica('pc')
+  computer.toString()
