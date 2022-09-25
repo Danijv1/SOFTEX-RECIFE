@@ -1,0 +1,77 @@
+class Veiculo {
+    constructor(modelo, marca, cor, numeroRodas) {
+      this.modelo = modelo
+      this.marca = marca
+      this.cor = cor
+      this.numeroRodas = numeroRodas
+    }
+    clone() {}
+  }
+  
+  class Carro extends Veiculo {
+    constructor(modelo, marca, cor, numeroRodas, numeroPortas) {
+      super(modelo, marca, cor, numeroRodas)
+      this.numeroPortas = numeroPortas
+    }
+    clone() {
+      const novo = new Carro(
+        this.modelo,
+        this.marca,
+        this.cor,
+        this.numeroRodas,
+        this.numeroPortas
+      )
+      return novo
+    }
+    represent() {
+      console.log('Funcao Represent para carros')
+    }
+  }
+  
+  class Moto extends Veiculo {
+    constructor(modelo, marca, cor, numeroRodas, cilindradas) {
+      super(modelo, marca, cor, numeroRodas)
+      this.cilindradas = cilindradas
+    }
+    clone() {
+      const novo = new Moto(
+        this.modelo,
+        this.marca,
+        this.cor,
+        this.numeroRodas,
+        this.cilindradas
+      )
+      return novo
+    }
+    represent() {
+      console.log('Funcao Represent para motos')
+    }
+  }
+  
+  let novo1 = new Carro('Hyundai', 'Honda', 'Branco', '4', '4')
+  let novo2 = new Moto('Suzuky', 'Honda', 'Vermelha', '2', '12000')
+  
+  let arrayVeiculos = []
+  
+  class Aplicacao {
+    criarVeiculos() {
+      for (let i = 0; i < 6; i++) {
+        if (i % 2 == 0) {
+          let objN = novo1.clone()
+          arrayVeiculos.push(objN)
+        } else {
+          let objN = novo2.clone()
+          arrayVeiculos.push(objN)
+        }
+      }
+    }
+    retorno() {
+      console.log(arrayVeiculos)
+      novo1.represent()
+      novo2.represent()
+    }
+  }
+  
+  let app = new Aplicacao()
+  app.criarVeiculos()
+  app.retorno()
