@@ -1,0 +1,69 @@
+class Sanduiche():
+
+    def operation(self) -> str:
+        pass
+    def custo(self) -> float:
+        pass
+
+class FrangoAssado(Sanduiche):
+
+    def operation(self) -> str:
+        return "Sanduíche de Frango Assado"
+
+class ingredienteDecorador(Sanduiche):
+
+    _component: Sanduiche = None
+
+    def __init__(self, component: Sanduiche) -> None:
+        self._component = component
+
+    @property
+    def component(self) -> Sanduiche:
+        """
+        The Decorator delegates all work to the wrapped component.
+        """
+
+        return self._component
+
+    def operation(self) -> str:
+        return self._component.operation()
+
+
+class Pepperoni(ingredienteDecorador):
+
+    def operation(self) -> str:
+
+        return f" pepperoni({self.component.operation()}) "
+
+   # def custo(self) -> float:
+
+
+class Bacon(ingredienteDecorador):
+
+    def operation(self) -> str:
+        return f" bacon({self.component.operation()})"
+
+
+#def client_code(component: Sanduiche) -> None:
+
+    # ...
+
+   # print(f"RESULT: {component.operation()}", end="")
+
+    # ...
+
+
+if __name__ == "__main__":
+    # This way the client code can support both simple components...
+    simple = FrangoAssado()
+    print(f'Este é o ${FrangoAssado.operation} e seu custo é ${FrangoAssado.custoingredientedecorador}.')
+    #client_code(simple)
+    print("\n")
+
+    # ...as well as decorated ones.
+    #
+    # Note how decorators can wrap not only simple components but the other
+    # decorators as well.
+   # decorator1 = ConcreteDecoratorA(simple)
+   # decorator2 = ConcreteDecoratorB(decorator1)
+    print("Client: Now I've got 
